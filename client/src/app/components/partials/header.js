@@ -15,7 +15,7 @@ export default class Header extends React.Component {
                                 <span className="icon-bar"></span>
                             </button>
                             <a className="navbar-brand" href="/#/"><img
-                                src="src/content/img/logo.jpg"
+                                src="img/logo.jpg"
                                 alt="Dispute Bills"/>
                             </a>
                         </div>

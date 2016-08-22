@@ -22,9 +22,9 @@ export default class Header extends React.Component {
                         <div id="navbar3" className="navbar-collapse collapse">
                             <ul className="nav navbar-nav navbar-right">
                                 <li><a href="/">Anasayfa</a></li>
-                                <li><a href="/#/kurumsal">Kurumsal</a></li>
-                                <li><a href="/#/projeler">Projeler</a></li>
-                                <li><a href="/#/iletisim">İletişim</a></li>
+                                <li><a href="/kurumsal">Kurumsal</a></li>
+                                <li><a href="/projeler">Projeler</a></li>
+                                <li><a href="/iletisim">İletişim</a></li>
                             </ul>
                         </div>
                     </div>

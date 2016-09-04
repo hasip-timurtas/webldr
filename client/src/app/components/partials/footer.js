@@ -10,7 +10,7 @@ export default class Footer extends React.Component {
                            
                         </div>
                         <div className="footer-content">
-                            <p>Tüm hakkı saklıdır © Ağaoğlu 2016</p>
+                            <p> Copyright © ldrlottery.com 2016</p>
                         </div>
 
 

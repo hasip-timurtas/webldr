@@ -24,9 +24,10 @@ export default class Header extends React.Component {
                             <ul className="nav navbar-nav navbar-right">
                                 <li><a href="/">Home</a></li>
                                 <li><a href="/my-page">My Page</a></li>
-                                <li><a href="/lottery">Lottery</a></li>
+                                <li className="ldr-link"><a href="/lottery">Lottery</a></li>
                                 <li><a href="/about-us">About Us</a></li>
                                 <li><a href="/faq">FAQ</a></li>
+                                <li><a href="/register">Register</a></li>
                                 <li><a href="#"> <AccountsUI /> </a></li>
                             </ul>
                         </div>

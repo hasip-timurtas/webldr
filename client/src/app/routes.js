@@ -8,6 +8,8 @@ import Lottery from './components/pages/lottery';
 import AboutUs from './components/pages/aboutus';
 import Faq from './components/pages/faq';
 
+import Register from './components/partials/register';
+
 FlowRouter.route('/', {
     action(){
         mount(MainLayout, {
@@ -45,6 +47,15 @@ FlowRouter.route('/faq', {
     action(){
         mount(MainLayout, {
             content: (<Faq />)
+        })
+    }
+});
+
+
+FlowRouter.route('/register', {
+    action(){
+        mount(MainLayout, {
+            content: (<Register />)
         })
     }
 });

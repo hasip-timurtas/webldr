@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default class HomePage extends React.Component {
+
+export default class Lottery extends React.Component {
     render() {
         return (
             <div>
-
-                <h1> Home Page123 </h1>
+                <h1> LOTTERY</h1>
             </div>
         )
     }

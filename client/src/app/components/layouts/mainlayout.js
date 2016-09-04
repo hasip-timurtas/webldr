@@ -5,7 +5,7 @@ import Footer from '../partials/footer';
 export const MainLayout = ({content}) => (
     <div>
         <Header />
-        <div className="content-area">
+        <div className="content-area container">
             {content}
         </div>
         <Footer />

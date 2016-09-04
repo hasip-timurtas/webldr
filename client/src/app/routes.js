@@ -3,7 +3,10 @@ import {mount} from 'react-mounter';
 
 import {MainLayout} from './components/layouts/mainlayout';
 import HomePage from './components/pages/homepage';
-import Kurumsal from './components/pages/kurumsal';
+import MyPage from './components/pages/mypage';
+import Lottery from './components/pages/lottery';
+import AboutUs from './components/pages/aboutus';
+import Faq from './components/pages/faq';
 
 FlowRouter.route('/', {
     action(){
@@ -13,10 +16,35 @@ FlowRouter.route('/', {
     }
 });
 
-FlowRouter.route('/kurumsal', {
+FlowRouter.route('/my-page', {
     action(){
         mount(MainLayout, {
-            content: (<Kurumsal />)
+            content: (<MyPage />)
+        })
+    }
+});
+
+FlowRouter.route('/lottery', {
+    action(){
+        mount(MainLayout, {
+            content: (<Lottery />)
+        })
+    }
+});
+
+FlowRouter.route('/about-us', {
+    action(){
+        mount(MainLayout, {
+            content: (<AboutUs />)
+        })
+    }
+});
+
+
+FlowRouter.route('/faq', {
+    action(){
+        mount(MainLayout, {
+            content: (<Faq />)
         })
     }
 });

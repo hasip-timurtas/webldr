@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default class HomePage extends React.Component {
+
+export default class Faq extends React.Component {
     render() {
         return (
             <div>
-
-                <h1> Home Page123 </h1>
+                <h1> FAQ</h1>
             </div>
         )
     }

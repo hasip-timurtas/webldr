@@ -1,4 +1,5 @@
 import React from 'react';
+import AccountsUI from '../../AccountsUI';
 
 
 export default class Header extends React.Component {
@@ -21,10 +22,12 @@ export default class Header extends React.Component {
                         </div>
                         <div id="navbar3" className="navbar-collapse collapse">
                             <ul className="nav navbar-nav navbar-right">
-                                <li><a href="/">Anasayfa</a></li>
-                                <li><a href="/kurumsal">Kurumsal</a></li>
-                                <li><a href="/projeler">Projeler</a></li>
-                                <li><a href="/iletisim">İletişim</a></li>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/my-page">My Page</a></li>
+                                <li><a href="/lottery">Lottery</a></li>
+                                <li><a href="/about-us">About Us</a></li>
+                                <li><a href="/faq">FAQ</a></li>
+                                <li><a href="#"> <AccountsUI /> </a></li>
                             </ul>
                         </div>
                     </div>

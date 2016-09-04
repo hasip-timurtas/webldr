@@ -1,11 +1,11 @@
 import React from 'react';
 
 
-export default class HomePage extends React.Component {
+export default class AboutUs extends React.Component {
     render() {
         return (
             <div>
-                <h1> Kurumsal</h1>
+                <h1> About Us</h1>
             </div>
         )
     }

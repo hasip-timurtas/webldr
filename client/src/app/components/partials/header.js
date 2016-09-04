@@ -1,6 +1,4 @@
 import React from 'react';
-import AccountsUI from '../../AccountsUI';
-
 
 export default class Header extends React.Component {
     render() {
@@ -27,8 +25,7 @@ export default class Header extends React.Component {
                                 <li className="ldr-link"><a href="/lottery">Lottery</a></li>
                                 <li><a href="/about-us">About Us</a></li>
                                 <li><a href="/faq">FAQ</a></li>
-                                <li><a href="/register">Register</a></li>
-                                <li><a href="#"> <AccountsUI /> </a></li>
+                                <li><a href="/register">Register</a></li>                            
                             </ul>
                         </div>
                     </div>

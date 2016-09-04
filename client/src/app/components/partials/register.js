@@ -15,13 +15,25 @@ export default class AboutUs extends React.Component {
     }
 
 
-loginWithGoogle(){
-    Meteor.loginWithGoogle();
-}
+    loginWithGoogle() {
+        Meteor.loginWithGoogle(function (err) {
+            if (err) {
 
-login(){
-    Meteor.login();
-}
+            } else {
+                console.log(Meteor.userId());
+            }
+        });
+    }
+
+    logOut() {
+        Meteor.logout(function (err) {
+            if (err) {
+
+            } else {
+                console.log(Meteor.userId());
+            }
+        });
+    }
 
 
     render() {
@@ -34,6 +46,8 @@ login(){
                 </form>
 
                 <input type="button" value="login with Google" onClick={this.loginWithGoogle} />
+
+                <input type="button" value="Logout" onClick={this.logOut} />
             </div>
         )
     }

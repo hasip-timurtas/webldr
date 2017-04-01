@@ -5,10 +5,8 @@ export const buildInvitationToJoin = ({
   actionUrl,
   appUrl,
   invitedByName,
-  businessName,
-}) => {
-
-  return `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN"
+  businessName
+}) => `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
@@ -22,7 +20,7 @@ export const buildInvitationToJoin = ({
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
-    <title>kuafor Email Reminder</title>
+    <title>Ldrlottery Email Reminder</title>
 </head>
 <body style="width: 100% !important;min-width: 100%;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100% !important;margin: 0;padding: 0;background-color: #FFFFFF">
 
@@ -215,11 +213,11 @@ export const buildInvitationToJoin = ({
                                                                                     </p>
                                                                                     <p style="margin: 0;font-size: 12px;line-height: 18px;text-align: left">&nbsp;<br></p>
                                                                                     <p style="margin: 0;font-size: 12px;line-height: 18px;text-align: left">
-                                                                                    <strong><span style="font-size: 16px; line-height: 24px;">We will be using kuafor to collaborate on your project.</span></strong>
+                                                                                    <strong><span style="font-size: 16px; line-height: 24px;">We will be using Ldrlottery to collaborate on your project.</span></strong>
                                                                                     </p>
                                                                                     <p style="margin: 0;font-size: 12px;line-height: 18px;text-align: left">&nbsp;<br></p>
                                                                                     <p style="margin: 0;font-size: 12px;line-height: 18px;text-align: left">
-                                                                                    <span style="font-size: 16px; line-height: 24px;">You will be able to view progress, upload files, create tasks and chat with me directly from within kuafor.</span><br>
+                                                                                    <span style="font-size: 16px; line-height: 24px;">You will be able to view progress, upload files, create tasks and chat with me directly from within Ldrlottery.</span><br>
                                                                                     </p>
 
 																																								</div>
@@ -291,7 +289,7 @@ export const buildInvitationToJoin = ({
                                                                                                            target="_blank">
                                                                                                             <span style="font-size:16px;line-height:32px;"><span
                                                                                                                     style="font-size: 16px; line-height: 32px;"
-                                                                                                                    data-mce-style="font-size: 16px;">Accept ${ invitedByFirst }'s invitation</span></span>
+                                                                                                                    data-mce-style="font-size: 16px;">Accept ${invitedByFirst}'s invitation</span></span>
                                                                                                         </a>
                                                                                                         <!--[if !mso]><!- - -->
                                                                                                     </td>
@@ -387,8 +385,8 @@ export const buildInvitationToJoin = ({
                                                                                     <p style="margin: 0;font-size: 12px;line-height: 18px;text-align: left">
                                                                                         <span style="font-size: 12px; line-height: 18px;">This email was sent by <a
                                                                                                 style="color:#959EAE;text-decoration: underline;"
-                                                                                                href="https://kuafor.com"
-                                                                                                target="_blank">kuafor</a>.&nbsp;</span>
+                                                                                                href="https://ldrlottery.com"
+                                                                                                target="_blank">ldrlottery</a>.&nbsp;</span>
                                                                                     </p>
 																																									</div>
                                                                             </div>
@@ -428,6 +426,4 @@ export const buildInvitationToJoin = ({
 
 </body>
 </html>
-`;
-
-};
+`

@@ -25,7 +25,7 @@ Meteor.startup(()=>{
           expires: new Date(localStorage['Meteor.loginTokenExpires'])
         };
 
-        cookie().set("Kuafor", loginToken.token, {
+        cookie().set("ldrlottery", loginToken.token, {
           path: "/",
           expires: loginToken.expires,
         });
@@ -36,7 +36,7 @@ Meteor.startup(()=>{
 
       } else if (!Meteor.loggingIn()) {
 
-        const existingCookie = cookie().get("kuafor");
+        const existingCookie = cookie().get("ldrlottery");
 
         if (!!existingCookie){
 
@@ -44,7 +44,7 @@ Meteor.startup(()=>{
 
             if (err){
 
-              cookie().set("kuafor", '', {
+              cookie().set("ldrlottery", '', {
                 path: "/",
                 expires: new Date(0),
               });

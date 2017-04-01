@@ -4,10 +4,8 @@ export const buildSystemEmail = ({
   messageTextLines,
   actionUrl,
   actionText,
-  supportEmail,
-}) => {
-
-  return `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN"
+  supportEmail
+}) => `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
@@ -21,7 +19,7 @@ export const buildSystemEmail = ({
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
-    <title>kuafor Email Reminder</title>
+    <title>Ldrlottery Email Reminder</title>
 
 
 </head>
@@ -214,7 +212,7 @@ export const buildSystemEmail = ({
                                                                             <div style="color:#4E596B;line-height:150%;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;">
                                                                                 <div style="font-size:12px;line-height:18px;color:#4E596B;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;text-align:left;">
                                                                                     <p style="margin: 0;font-size: 12px;line-height: 18px;text-align: left">
-                                                                                        <span style="font-size: 16px; line-height: 24px;">Hey ${firstName},</span>
+                                                                                        <span style="font-size: 16px; line-height: 24px;">Hi ${firstName},</span>
                                                                                     </p>
                                                                                     ${messageTextLines.map(messageText => (`<p style="margin: 0;font-size: 12px;line-height: 18px;text-align: left">
                                                                                         <span style="font-size: 16px; line-height: 24px;"><br
@@ -389,8 +387,8 @@ export const buildSystemEmail = ({
                                                                                     <p style="margin: 0;font-size: 12px;line-height: 18px;text-align: left">
                                                                                         <span style="font-size: 12px; line-height: 18px;">This email was sent by <a
                                                                                                 style="color:#959EAE;text-decoration: underline;"
-                                                                                                href="https://kuafor.com"
-                                                                                                target="_blank">kuafor</a>.&nbsp;</span>
+                                                                                                href="https://ldrlottery.com"
+                                                                                                target="_blank">ldrlottery</a>.&nbsp;</span>
                                                                                     </p>
                                                                                     <p style="margin: 0;font-size: 12px;line-height: 18px;text-align: left">
                                                                                         <span style="font-size: 12px; line-height: 18px;">Have a question or need help? Contact us at ${supportEmail}</span>
@@ -433,6 +431,4 @@ export const buildSystemEmail = ({
 
 </body>
 </html>
-`;
-
-};
+`

@@ -11,7 +11,7 @@ module.exports = {
   },
 
   meteor: {
-    name: 'kuafor',
+    name: 'ldrlottery',
     path: '../../',
     servers: {
       one: {}
@@ -20,7 +20,7 @@ module.exports = {
       TZ: 'Etc/UTC',
       NODE_ENV: 'production',
       ROOT_URL: 'http://clientservicerecord.co.uk',
-      MONGO_URL: 'mongodb://localhost/kuafor'
+      MONGO_URL: 'mongodb://localhost/ldrlottery'
     },
     dockerImage: 'abernix/meteord:base',
     deployCheckWaitTime: 60

@@ -3,11 +3,12 @@ import { Link, browserHistory } from 'react-router'
 import { connect } from 'react-redux'
 import { SimpleSchema } from 'meteor/aldeed:simple-schema'
 import { AutoForm } from 'uniforms-unstyled'
-import { HiddenField, TextField, SubmitField } from '/imports/ui/_components/uniforms'
+import { HiddenField, TextField, ReactSelectField, SubmitField } from '/imports/ui/_components/uniforms'
 import Alert from 'react-s-alert'
 import { signUpAndCreateUserSchema, signUpAndCreateUser } from '/imports/api/accounts/methods'
 import { checkEmailAvailability } from '/imports/api/accounts/methods'
 import { AlreadyLoggedIn } from '/imports/ui/_layouts'
+import { COUNTRY } from '/imports/environment/enums'
 
 export class Signup extends Component {
 
@@ -34,7 +35,7 @@ export class Signup extends Component {
               if (error) {
                 Alert.error(`Account is created, but could not sign-in, please sign in later.`)
               }
-              browserHistory.push('/')
+              browserHistory.push('/welcome')
             })
           }
         })
@@ -71,6 +72,18 @@ export class Signup extends Component {
                     <TextField name="name.first" placeholder="First name" />
                     <TextField name="name.last" placeholder="Last name" />
                   </div>
+                  <div className="fieldsets">
+                    <TextField name="age" placeholder="Age" />
+                  </div>
+                  <div className="fieldsets">
+                    <ReactSelectField
+                      name='country'
+                      placeholder='Select Country'
+                      options={COUNTRY}
+                      noResultsText="No texture found"
+                    />
+                  </div>
+
                   <hr className="hr-hidden"/>
                   <TextField type="email" name="email" placeholder="Your email" />
                   <TextField type="password" name="password" placeholder="Create a new password" />

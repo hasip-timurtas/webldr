@@ -1,47 +1,47 @@
-import { Accounts } from 'meteor/accounts-base';
-import React, { Component, PropTypes } from 'react';
-import { Link, browserHistory } from 'react-router';
-import { connect } from 'react-redux';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
-import { AutoForm } from 'uniforms-unstyled';
-import { TextField, SubmitField } from '/imports/ui/_components/uniforms';
-import Alert from 'react-s-alert';
+import { Accounts } from 'meteor/accounts-base'
+import React, { Component, PropTypes } from 'react'
+import { Link, browserHistory } from 'react-router'
+import { connect } from 'react-redux'
+import { SimpleSchema } from 'meteor/aldeed:simple-schema'
+import { AutoForm } from 'uniforms-unstyled'
+import { TextField, SubmitField } from '/imports/ui/_components/uniforms'
+import Alert from 'react-s-alert'
 
 
-import { AlreadyLoggedIn } from '/imports/ui/_layouts';
+import { AlreadyLoggedIn } from '/imports/ui/_layouts'
 
 export class ResetPassword extends Component {
 
   static propTypes = {
     user: PropTypes.object,
-    children: PropTypes.any,
+    children: PropTypes.any
   }
 
   resetPasswordSchema = new SimpleSchema({
     emailAddress: {
       type: String,
-      regEx: SimpleSchema.RegEx.Email,
-    },
+      regEx: SimpleSchema.RegEx.Email
+    }
   })
 
-  handleResetPassword(doc) {
-    this.resetPasswordSchema.clean(doc);
+  handleResetPassword (doc) {
+    this.resetPasswordSchema.clean(doc)
     Accounts.forgotPassword({
-      email: doc.emailAddress,
+      email: doc.emailAddress
     }, (error) => {
       if (error) {
-        Alert.error(error.reason || error.message || error.details);
+        Alert.error(error.reason || error.message || error.details)
       } else {
-        browserHistory.push('/');
-        Alert.success('Check your inbox for a reset link!');
+        browserHistory.push('/')
+        Alert.success('Check your inbox for a reset link!')
       }
-    });
+    })
   }
 
-  render() {
-    const { user } = this.props;
+  render () {
+    const { user } = this.props
 
-    return !!user
+    return user
       ? <AlreadyLoggedIn/>
       : (
           <div id="page" className="no-pageAddons signin-page">
@@ -49,7 +49,7 @@ export class ResetPassword extends Component {
               <div className="graphic-wrapper">
                 <div className="graphic-container">
                   <div className="logo">
-                    <img alt="" src="/logo-symbol-inverted.png" />
+                    <img alt="" src="/logo.png" />
                   </div>
                 </div>
               </div>
@@ -73,14 +73,13 @@ export class ResetPassword extends Component {
               </div>
             </div>
           </div>
-        );
-
+        )
   }
 
 }
 
 export default connect(
-  ({globalData:{currentUser: {user}}}) => ({
-    user,
+  ({ globalData: { currentUser: { user } } }) => ({
+    user
   })
-)(ResetPassword);
+)(ResetPassword)

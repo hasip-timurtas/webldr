@@ -1,6 +1,6 @@
-import {Meteor} from 'meteor/meteor';
-import {ValidatedMethod} from 'meteor/mdg:validated-method';
-import {Accounts} from 'meteor/accounts-base';
+import { Meteor } from 'meteor/meteor'
+import { ValidatedMethod } from 'meteor/mdg:validated-method'
+import { Accounts } from 'meteor/accounts-base'
 
 export const sendVerificationEmail = new ValidatedMethod({
 
@@ -8,14 +8,12 @@ export const sendVerificationEmail = new ValidatedMethod({
 
   validate: null,
 
-  run() {
-
+  run () {
     if (this.userId && Meteor.isServer) {
-      Accounts.sendVerificationEmail(this.userId);
+      Accounts.sendVerificationEmail(this.userId)
     }
 
-    return 'OK';
-
+    return 'OK'
   }
 
-});
+})

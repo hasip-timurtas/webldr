@@ -1,91 +1,97 @@
-import { Meteor } from 'meteor/meteor';
-import { Mongo } from 'meteor/mongo';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
-import _ from 'underscore';
+import { Meteor } from 'meteor/meteor'
+import { Mongo } from 'meteor/mongo'
+import { SimpleSchema } from 'meteor/aldeed:simple-schema'
+import _ from 'underscore'
 
-Meteor.users.masterProfile = new Mongo.Collection('usersmasterprofile');
+Meteor.users.masterProfile = new Mongo.Collection('usersmasterprofile')
 
 Meteor.users.masterProfile.schema = new SimpleSchema({
   userId: {
     type: String,
     index: 1,
     unique: true,
-    regEx: SimpleSchema.RegEx.Id,
+    regEx: SimpleSchema.RegEx.Id
   },
   accountEdited: {
     type: Boolean,
-    defaultValue: false,
+    defaultValue: false
   },
   'name.first': {
     type: String,
-    max: 256,
+    max: 256
   },
   'name.last': {
     type: String,
-    max: 256,
+    max: 256
   },
   'organization.name': {
     type: String,
     max: 256,
-    optional: true,
+    optional: true
   },
   'organization.role': {
     type: String,
     max: 256,
-    optional: true,
+    optional: true
+  },
+  country: {
+    type: String
+  },
+  age: {
+    type: Number
   },
   avatarUrl: {
     type: String,
-    optional: true,
+    optional: true
   },
   birthDay: {
     type: Date,
-    optional: true,
+    optional: true
   },
   contactEmails: {
     type: [Object],
     optional: true,
-    custom: function () {
+    custom () {
       if (this.isSet) {
         if (this.value.length !== _.uniq(_.pluck(this.value, 'address')).length) {
-          return 'notUnique';
+          return 'notUnique'
         }
       }
-    },
+    }
   },
   'contactEmails.$.address': {
     type: String,
     optional: true,
-    regEx: SimpleSchema.RegEx.Email,
+    regEx: SimpleSchema.RegEx.Email
   },
   'phones.$.countryDialCode': {
     type: String,
-    optional: true,
+    optional: true
   },
   'phones.$.number': {
     type: String,
     max: 256,
-    optional: true,
+    optional: true
   },
   'address.street': {
     type: String,
     max: 256,
-    optional: true,
+    optional: true
   },
   'address.city': {
     type: String,
     max: 256,
-    optional: true,
+    optional: true
   },
   'address.zipCode': {
     type: String,
     max: 256,
-    optional: true,
+    optional: true
   },
   'address.country': {
     type: String,
-    optional: true,
+    optional: true
   }
-});
+})
 
-Meteor.users.masterProfile.attachSchema(Meteor.users.masterProfile.schema);
+Meteor.users.masterProfile.attachSchema(Meteor.users.masterProfile.schema)

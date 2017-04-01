@@ -6,10 +6,8 @@ export const buildDailyDigest = ({
   overdueTasks,
   overdueTasksCount,
   upcomingTasks,
-  upcomingTasksCount,
-}) => {
-
-  return `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN"
+  upcomingTasksCount
+}) => `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
@@ -23,7 +21,7 @@ export const buildDailyDigest = ({
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
-    <title>kuafor Email Reminder</title>
+    <title>Ldrlottery Email Reminder</title>
 
 
 </head>
@@ -350,7 +348,7 @@ export const buildDailyDigest = ({
                                                                                         &nbsp;<br></p>
 
 
-                                                                                    ${  overdueTasksCount ? (
+                                                                                    ${overdueTasksCount ? (
     `<p style="margin: 0;font-size: 12px;line-height: 18px;text-align: left">
                                                                                     &nbsp;<br></p>
                                                                                     <p style="margin: 0;font-size: 12px;line-height: 18px;text-align: left">
@@ -362,9 +360,9 @@ export const buildDailyDigest = ({
                                                                                     </li>`).join('')}
                                                                                     </ul>`
 
-  ) : `` }
+  ) : ``}
 
-                                                                                    ${  upcomingTasksCount ? (
+                                                                                    ${upcomingTasksCount ? (
     `<p style="margin: 0;font-size: 12px;line-height: 18px">
                                                                                     <span style="font-size: 16px; line-height: 24px;"><br></span>
                                                                                 </p>
@@ -376,7 +374,7 @@ export const buildDailyDigest = ({
                                                                                     </li>`).join('')}
                                                                                     </ul>`
 
-  ) : `` }
+  ) : ``}
 
 
                                                                                 </div>
@@ -446,7 +444,7 @@ export const buildDailyDigest = ({
                                                                                                         <a style="display: inline-block;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;background-color: #88b1bf;color: #ffffff"
                                                                                                            href="${appUrl}"
                                                                                                            target="_blank">
-                                                                                                            <span style="font-size:16px;line-height:32px;">Login to your&nbsp;kuafor account</span>
+                                                                                                            <span style="font-size:16px;line-height:32px;">Login to your&nbsp;Ldrlottery account</span>
                                                                                                         </a>
                                                                                                         <!--[if !mso]><!- - -->
                                                                                                     </td>
@@ -542,8 +540,8 @@ export const buildDailyDigest = ({
                                                                                     <p style="margin: 0;font-size: 12px;line-height: 18px;text-align: left">
                                                                                         <span style="font-size: 12px; line-height: 18px;">This email was sent by <a
                                                                                                 style="color:#959EAE;text-decoration: underline;"
-                                                                                                href="https://kuafor.com"
-                                                                                                target="_blank">kuafor</a>. </span>
+                                                                                                href="https://ldrlottery.com"
+                                                                                                target="_blank">Ldrlottery</a>. </span>
                                                                                     </p>
                                                                                     <p style="margin: 0;font-size: 12px;line-height: 18px;text-align: left">
                                                                                         <span style="font-size: 12px; line-height: 18px;"><a
@@ -588,6 +586,4 @@ export const buildDailyDigest = ({
 
 </body>
 </html>
-`;
-
-};
+`

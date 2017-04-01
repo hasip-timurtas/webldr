@@ -38,6 +38,15 @@ const clearAlerts = (e, a) => {
   Alert.closeAll()
 }
 
+export const Welcome = props => (
+  <div className="fullscreen fullscreen-absolute text-align-centred">
+    <div className="content">
+      <h1>Thank you for signing up. We will be in touch in future...</h1>
+    </div>
+  </div>
+)
+
+
 Meteor.startup(() => {
   render(
     <Provider store={store}>
@@ -45,15 +54,15 @@ Meteor.startup(() => {
         <Router history={ history }>
 
           <Route path="/" onEnter={clearAlerts} component={LayoutManager}>
+            <IndexRedirect to="welcome" /> // Yukarıda tanımlı
 
             <Route path="signup" component={ Signup } />
             <Route path="reset-password" component={ ResetPassword } />
             <Route path="verify-password-reset/:token" component={ VerifyPasswordReset } />
             <Route path="verify-email-address/:token" component={ VerifyEmailAddress } />
+            <Route path="welcome" component={ Welcome } />
 
-            <IndexRedirect to="customers" />
             <Route component={ MainLayout }>
-
               <Route path="client-services" >
                 <IndexRoute component={ ListClientServices } />
                 <Route path="create-clientService" component={ CreateClientService } />

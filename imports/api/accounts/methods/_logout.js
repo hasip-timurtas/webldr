@@ -4,7 +4,7 @@ import cookie from 'cookie-dough'
 
 export const logOut = () => {
   Meteor.logout(() => {
-    cookie().set("kuafor", '', {
+    cookie().set("ldrlottery", '', {
       path: '/',
       expires: new Date(0)
     })

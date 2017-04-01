@@ -19,6 +19,12 @@ export const signUpAndCreateUserSchema = new SimpleSchema({
     type: String,
     max: 256,
   },
+  country:{
+    type: String
+  },
+  age:{
+    type: Number
+  },
   email: {
     type: String,
     regEx: SimpleSchema.RegEx.Email,

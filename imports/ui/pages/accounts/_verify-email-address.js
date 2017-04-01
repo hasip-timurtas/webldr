@@ -50,7 +50,7 @@ export default class VerifyEmailAddress extends Component {
               <div className="graphic-wrapper">
                 <div className="graphic-container">
                   <div className="logo">
-                    <img alt="" src="/logo-symbol-inverted.png" />
+                    <img alt="" src="/logo.png" />
                   </div>
                 </div>
               </div>
@@ -59,7 +59,7 @@ export default class VerifyEmailAddress extends Component {
                   <div className="form-header">
                     <h1>Email address verification</h1>
                   </div>
-                  <p>You need to verify your email address to fully utilize your kuafor account.</p>
+                  <p>You need to verify your email address to fully utilize your Ldrlottery account.</p>
                   <p className="password-reset-option">
                     <Link className="link" to="/">
                       <span>Home</span>

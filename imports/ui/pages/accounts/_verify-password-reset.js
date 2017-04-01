@@ -1,59 +1,58 @@
-import { Accounts } from 'meteor/accounts-base';
-import React, { Component, PropTypes } from 'react';
-import { Link, browserHistory } from 'react-router';
-import { connect } from 'react-redux';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
-import { AutoForm } from 'uniforms-unstyled';
-import { TextField, SubmitField } from '/imports/ui/_components/uniforms';
-import Alert from 'react-s-alert';
+import { Accounts } from 'meteor/accounts-base'
+import React, { Component, PropTypes } from 'react'
+import { Link, browserHistory } from 'react-router'
+import { connect } from 'react-redux'
+import { SimpleSchema } from 'meteor/aldeed:simple-schema'
+import { AutoForm } from 'uniforms-unstyled'
+import { TextField, SubmitField } from '/imports/ui/_components/uniforms'
+import Alert from 'react-s-alert'
 
 
-import { AlreadyLoggedIn, TokenNotFound } from '/imports/ui/_layouts';
+import { AlreadyLoggedIn, TokenNotFound } from '/imports/ui/_layouts'
 
 export class VerifyPasswordReset extends Component {
 
   static propTypes = {
     params: React.PropTypes.object,
     user: PropTypes.object,
-    children: PropTypes.any,
+    children: PropTypes.any
   }
 
   verifyPasswordResetSchema = new SimpleSchema({
     newPassword: {
       type: String,
-      min: 6,
+      min: 6
     },
     repeatNewPassword: {
       type: String,
       min: 6,
-      custom: function() {
-        const newPassword = this.field('newPassword');
+      custom () {
+        const newPassword = this.field('newPassword')
         if (this.isSet && newPassword.isSet && this.value !== newPassword.value) {
-          return 'passwordMatchError';
+          return 'passwordMatchError'
         }
       }
-    },
+    }
   })
 
-  handleVerifyPasswordReset(doc) {
-    const {params: {token}} = this.props;
-    this.verifyPasswordResetSchema.clean(doc);
+  handleVerifyPasswordReset (doc) {
+    const { params: { token } } = this.props
+    this.verifyPasswordResetSchema.clean(doc)
 
     Accounts.resetPassword(token, doc.newPassword, (error) => {
       if (error) {
-        Alert.error(error.reason || error.message || error.details);
+        Alert.error(error.reason || error.message || error.details)
       } else {
-        browserHistory.push('/');
-        Alert.success('Password reset!');
+        browserHistory.push('/')
+        Alert.success('Password reset!')
       }
-    });
-
+    })
   }
 
-  render() {
-    const { user, params: {token} } = this.props;
+  render () {
+    const { user, params: { token } } = this.props
 
-    return !!user
+    return user
       ? <AlreadyLoggedIn/>
       : !token
       ? <TokenNotFound/>
@@ -63,7 +62,7 @@ export class VerifyPasswordReset extends Component {
               <div className="graphic-wrapper">
                 <div className="graphic-container">
                   <div className="logo">
-                    <img alt="" src="/logo-symbol-inverted.png" />
+                    <img alt="" src="/logo.png" />
                   </div>
                 </div>
               </div>
@@ -88,14 +87,13 @@ export class VerifyPasswordReset extends Component {
               </div>
             </div>
           </div>
-        );
-
+        )
   }
 
 }
 
 export default connect(
-  ({globalData:{currentUser: {user}}}) => ({
-    user,
+  ({ globalData: { currentUser: { user } } }) => ({
+    user
   })
-)(VerifyPasswordReset);
+)(VerifyPasswordReset)

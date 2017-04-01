@@ -2,10 +2,8 @@ export const buildEmailNotification = ({
   firstName,
   appUrl,
   messageText,
-  actionText,
-}) => {
-
-  return `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN"
+  actionText
+}) => `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
@@ -19,7 +17,7 @@ export const buildEmailNotification = ({
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
-    <title>kuafor Email Reminder</title>
+    <title>Ldrlottery Email Reminder</title>
 
 
 </head>
@@ -384,8 +382,8 @@ export const buildEmailNotification = ({
                                                                                     <p style="margin: 0;font-size: 12px;line-height: 18px;text-align: left">
                                                                                         <span style="font-size: 12px; line-height: 18px;">This email was sent by <a
                                                                                                 style="color:#959EAE;text-decoration: underline;"
-                                                                                                href="https://kuafor.com"
-                                                                                                target="_blank">kuafor</a>. </span>
+                                                                                                href="https://ldrlottery.com"
+                                                                                                target="_blank">Ldrlottery</a>. </span>
                                                                                     </p>
                                                                                     <p style="margin: 0;font-size: 12px;line-height: 18px;text-align: left">
                                                                                         <span style="font-size: 12px; line-height: 18px;"><a
@@ -430,6 +428,4 @@ export const buildEmailNotification = ({
 
 </body>
 </html>
-`;
-
-};
+`
